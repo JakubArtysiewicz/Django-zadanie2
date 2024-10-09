@@ -10,4 +10,4 @@ def index(request):
 # Views który po wpisaniu pola ID z modelu Store wyświetli odpowiednie dane w HttpResponse
 def store(request, id):
     dane_z_id_store = Store.objects.filter(id=id)
-    return HttpResponse(str(dane_z_id_store))
+    return render(request, 'index2.html',{'dane':dane_z_id_store})
